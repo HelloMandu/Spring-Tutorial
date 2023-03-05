@@ -14,10 +14,12 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 class MemberServiceTest {
 
     MemberService memberService;
+    MemoryMemberRepository memberRepository;
 
     @BeforeEach
     void beforeEach() {
-        memberService = new MemberService(new MemoryMemberRepository());
+        memberRepository = new MemoryMemberRepository();
+        memberService = new MemberService(memberRepository);
     }
 
     @Test
